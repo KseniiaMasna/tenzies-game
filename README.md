@@ -1,8 +1,30 @@
-# React + Vite
+# Tenzies 🎲  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and fun dice game built with React and styled using Tailwind CSS. Roll the dice, hold numbers, and match all to win!  
 
-Currently, two official plugins are available:
+## Features  
+- Roll the dice with a single click 🎲  
+- Hold selected numbers 🔢  
+- Win when all dice match 🎉  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack  
+- **React.js** ⚛️ – Handles UI and state  
+- **Tailwind CSS** 🎨 – Provides fast and responsive styling  
+
+## How to Run  
+1. Clone the repository:  
+   ```bash
+   git clone git@github.com:KseniiaMasna/tenzies-game.git
+   cd tenzies
+   ```  
+2. Install dependencies:  
+   ```bash
+   npm install
+   ```  
+3. Start the development server:  
+   ```bash
+   npm run dev
+   ```  
+
+## License  
+MIT License 📜  
