@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { nanoid } from "nanoid"
+import Confetti from 'react-confetti'
 import Die from "./components/Die"
 
 export default function App() {
     
     const [dice, setDice] = useState(generateAllNewDice())
+
+    const gameWon = dice.every(die => die.isHeld) && dice.every(die => die.value === dice[0].value)    
     
     function generateAllNewDice() {
         return new Array(10)
@@ -43,13 +46,15 @@ export default function App() {
         onClick={() => holdDie(diceElement.id)}/>)
     
     return (
-        <main className="flex flex-col justify-evenly items-center h-full rounded ">
-            <div className="grid grid-cols-5 gap-5 ">
+        <main className="flex flex-col justify-evenly items-center h-full rounded">
+            <h1 className="text-white text-5xl p-4">Tenzies</h1>
+            <p className="text-white  max-w-lg p-4 text-center font-normal">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+            <div className="grid grid-cols-5 gap-5 p-8 ">
                 {diceElements}
             </div>
             
-            <button className="h-[50px] w-[100px] border-none rounded-md bg-red-700 m-12 text-white text-lg" onClick={rollDice}>Roll</button>
-            
+            <button className="h-[50px] w-auto whitespace-nowrap px-8 border-none rounded-md bg-red-700 m-12 text-white text-lg" onClick={gameWon ? () => setDice(generateAllNewDice) : rollDice}>{gameWon ? "New Game" : "Roll"}</button>
+            {gameWon && <Confetti className="w-screen h-screen"/>}
         </main>
     )
 }
